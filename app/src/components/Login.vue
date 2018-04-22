@@ -22,21 +22,21 @@
 </template>
 
 <script>
-  export default {
-      name: 'Login',
-      data () {
-          return {
-            usename:'',
-            password:'',
-            studentnumber:''
-        }
-      },
-      methods: {
-        Login:function () {
+export default {
+  name: 'Login',
+  data () {
+    return {
+      usename: '',
+      password: '',
+      studentnumber: ''
+    }
+  },
+  methods: {
+    Login: function () {
 
-        }
-      }
+    }
   }
+}
 </script>
 
 <style scoped>
