@@ -16,5 +16,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .uploadfile {
+    margin: 0 0;
+    background-color: blue;
+    height: 100px;
+  }
 </style>

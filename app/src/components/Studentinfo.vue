@@ -16,5 +16,9 @@ export default {
 </script>
 
 <style scoped>
-
+.studentinfo {
+  margin: 0 0;
+  background-color: red;
+  height: 100px;
+}
 </style>

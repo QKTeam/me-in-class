@@ -11,6 +11,23 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'Home',
+      component: Home,
+      children: [
+        {
+          path: 'studentinfo',
+          name: 'Studentinfo',
+          component: Studentinfo
+        },
+        {
+          path: 'uploadfile',
+          name: 'Uploadfile',
+          component: Uploadfile
+        }
+      ]
+    },
+    {
       path: '/Login',
       name: 'Login',
       component: Login
