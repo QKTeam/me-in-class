@@ -10,8 +10,13 @@
         <h4>请再次输入密码：</h4>
         <input type="text" placeholder="请确认密码" v-model="password2" @input="isEqual">
         <p>{{tips}}</p>
+        <h4>您的信息：</h4>
+        <input type="text" placeholder="此处填写学生信息" v-model="introduction">
+        <br/>
+        <h4>年龄：</h4>
+        <input type="text" placeholder="年龄" v-model="age">
         <br/><br/>
-        <button type="button" class="button" @click="register">注册</button>
+        <button type="button" class="button" @click="register($event)">注册</button>
     </div>
 </template>
 
@@ -25,25 +30,29 @@ export default {
       password: '',
       password2: '',
       tips: '',
+      introduction: '',
+      age: 18,
       student_id: ''
     }
   },
   methods: {
-    register: function () {
+    register: function (event) {
       event.preventDefault()
       let formData = new FormData()
       formData.append('name', this.name)
-      formData.append('student_number', this.student_number)
+      formData.append('password', this.password)
+      formData.append('introduction', this.introduction)
+      formData.append('age', this.age)
       let config = {
         headers: {
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/from-data'
         }
       }
-      this.$http.post('/register', formData, config)
-        .then((response) => {
-          this.student_id = response.data
-          console.log(response.data)
-        })
+      this.$http.post('/register', formData, config).then((response) => {
+        this.student_id = response.FormData
+        console.log(this.student_id)
+        this.$router.push({path: '/Login'})
+      })
         .catch(function (error) {
           console.log(error)
         })

@@ -1,13 +1,13 @@
 <template>
-  <div class="uploadfile">
-
+  <div class="Uploadfile">
+    emmm
   </div>
 </template>
 
 <script>
 export default {
   name: 'Uploadfile',
-  date () {
+  data () {
     return {
 
     }

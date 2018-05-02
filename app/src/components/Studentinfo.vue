@@ -1,13 +1,13 @@
 <template>
-  <div class="studentinfo">
-
+  <div class="Studentinfo">
+    mmmm
   </div>
 </template>
 
 <script>
 export default {
   name: 'Studentinfo',
-  date () {
+  data () {
     return {
 
     }

@@ -1,18 +1,17 @@
 <template>
   <div class="Home">
-    <div class="top">
-      <div class="top-left">
+    <div class="head">
+      <div class="logo">
+        <p>Logo</p>
       </div>
-      <div class="ComeIn">
-        <button class="Login">Login</button>
-      </div>
+      <button type="button" name="Login" class="Loginbutton" @click="tologin">Login</button>
     </div>
-    <div class="navbar">
-      <button class="studentinfo" @click="studentinfodown">学生信息</button>
-      <button class="uploadfile" @click="uploadfiledown">上传文件</button>
+    <div class="guide">
+      <button type="button" name="studentinfo" @click="tostudentinfo">学生信息</button>
+      <button type="button" name="Uploadfile" @click="touploadfile">文件上传</button>
     </div>
-    <div>
-      <router-view></router-view>
+    <div class="main">
+      <router-view/>
     </div>
   </div>
 </template>
@@ -20,17 +19,20 @@
 <script>
 export default {
   name: 'Home',
-  date () {
+  data () {
     return {
 
     }
   },
   methods: {
-    studentinfodown: function () {
-      this.$router.replace({path: '/studentinfo'})
+    tologin: function () {
+      this.$router.push('/Login')
     },
-    uploadfiledown: function () {
-      this.$router.replace({path: '/uploadfile'})
+    tostudentinfo: function () {
+      this.$router.push('/Home/Studentinfo')
+    },
+    touploadfile: function () {
+      this.$router.push('/Home/Uploadfile')
     }
   }
 }
@@ -38,28 +40,21 @@ export default {
 
 <style scoped>
 .Home {
-  width: 100%;
-  height: 100%;
+  margin: 0 0;
+  height: auto;
 }
-.top{
-  top: 0px;
-  position: absolute;
-  height: 15%;
-  width: 100%;
-}
-.top-left{
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  font-size: 30px;
-  color: black;
-}
-
-.ComeIn {
-  width: 100px;
+.head {
   height: 50px;
-  background-color: red;
+  margin: 0 auto 30px auto;
+  vertical-align: middle;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+.Loginbutton {
   float: right;
 }
-
 </style>
